@@ -1,0 +1,126 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Chennai_ILP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps" x:Name="userControl"
+    x:Class="Chennai_ILP.DetailsControl"
+    mc:Ignorable="d"
+    d:DesignHeight="605.08"
+    d:DesignWidth="400" RenderTransformOrigin="0.5,0.5">
+	<UserControl.Resources>
+		<Storyboard x:Name="Details_Exit">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="userControl">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.9">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="userControl">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.9">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="userControl">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="Details_Entry">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="userControl">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.9">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="userControl">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.9">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="userControl">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.RenderTransform>
+		<CompositeTransform/>
+	</UserControl.RenderTransform>
+    
+	<Grid Background="#FF0C0C0C" RequestedTheme="Light">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Rectangle Margin="0,0,0,1.167" Fill="#FF333333"/>
+		<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Details and feedback" VerticalAlignment="Center" FontFamily="Segoe WP Black" FontWeight="Bold" FontSize="21.333" Foreground="#FFBBBBBB" Height="26" Margin="95,12,96,11.167" Width="209"/>
+		<StackPanel VerticalAlignment="Top" Grid.Row="1" Margin="10,8.833,10,0">
+			<TextBlock x:Name="tbHostelName" TextWrapping="Wrap" Text="HOSTLENAME" Foreground="White" FontFamily="Segoe WP Light" FontSize="24"/>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<TextBlock x:Name="tbHostelAddress" TextWrapping="Wrap" Text="hostel address" Foreground="#FFB6B6B6" FontFamily="Segoe UI" FontSize="16" Margin="0,0,1.167,0"/>
+				<ToggleButton Click="Button_Click_2" Content="∇ MAP" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0" MinWidth="0" MinHeight="0" Foreground="White" BorderBrush="White" FontFamily="Segoe UI Symbol" FontWeight="Normal"/>
+			</Grid>
+            <Maps:MapControl MapServiceToken="Avhtk6n8uJO8n9aKVdw6O-9nSBqrYTwawdBPmPKe4B3w7CL55w2IBkPAxXoc4muN" x:Name="mapControl" Height="170"/>
+			<local:StarRateControl x:Name="starRateControl" Margin="0,20,0,0" Height="50" HorizontalAlignment="Center" Width="240"/>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,25,0,0">
+				<TextBlock TextWrapping="Wrap" Text="Average Rating: " Foreground="#FFB6B6B6" FontFamily="Segoe UI" FontSize="16"/>
+				<TextBlock x:Name="tbAvgRating" TextWrapping="Wrap" Text="4.8" Foreground="White" FontFamily="Segoe UI" FontSize="16" Margin="20,0,0,0"/>
+			</StackPanel>
+			<TextBlock TextWrapping="Wrap" Text="Comments" Foreground="#FFA3A3A3" Margin="0,5,0,0"/>
+			<TextBox x:Name="tbHostelComments" Margin="0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch" FontSize="13.333" Height="100" AcceptsReturn="True" RequestedTheme="Dark"/>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" RequestedTheme="Dark">
+				<Button Click="Button_Click_1" Content="Submit" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,5,0"/>
+				<Button Click="Button_Click" Content="Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,0,0,0"/>
+			</StackPanel>
+		</StackPanel>
+
+	</Grid>
+</UserControl>
